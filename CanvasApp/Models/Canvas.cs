@@ -33,6 +33,20 @@ namespace CanvasApp.Models
             }
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    sb.Append(Cells[j, i]);
+                }
+                sb.Append(Environment.NewLine);
+            }
+            return sb.ToString();
+        }
+
         public bool DrawCanvas()
         {
             for (int i = 0; i < height; i++)

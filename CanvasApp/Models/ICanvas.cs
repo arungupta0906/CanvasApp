@@ -11,5 +11,6 @@ namespace CanvasApp.Models
         bool DrawLine(Line lines);
         bool DrawRectangle(Rectangle rectangle);
         bool BucketFill(Point target, char colour);
+        string ToString();
     }
 }
