@@ -6,9 +6,10 @@ namespace CanvasApp.Models
 {
     public interface ICanvas
     {
-        void DrawCanvas();
-        void DrawLine(Line lines);
-        void DrawRectangle(Rectangle rectangle);
-        void BucketFill(Point target, char colour);
+        char[,] Cells { get; set; }
+        bool DrawCanvas();
+        bool DrawLine(Line lines);
+        bool DrawRectangle(Rectangle rectangle);
+        bool BucketFill(Point target, char colour);
     }
 }

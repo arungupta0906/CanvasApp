@@ -17,17 +17,17 @@ namespace CanvasApp.Commands
         public ICanvas ExecuteCommand(string[] args)
         {
             if (args.Length < 4)
-                throw new ArgumentException($"This command expects 4 arguments but only received {args.Length}");
+                throw new ArgumentException($"{Constants.Command_Expect_Four_Arguments} {args.Length}");
 
             if (!uint.TryParse(args[0], out uint x1)
                      || !uint.TryParse(args[1], out uint y1)
                      || !uint.TryParse(args[2], out uint x2)
                      || !uint.TryParse(args[3], out uint y2)
                     )
-                throw new ArgumentException("There is some invalid arguments. All 4 arguments should be positive integers");
+                throw new ArgumentException($"{Constants.Command_Expect_Four_Positive_Arguments}");
 
             if (_canvas == null)
-                throw new ArgumentException("Can does not exists. Please create one then try again.");
+                throw new ArgumentException($"{Constants.Command_Canvas_Not_Exists}");
 
             var P1 = new Point(x1, y1);
             var P2 = new Point(x2, y2);

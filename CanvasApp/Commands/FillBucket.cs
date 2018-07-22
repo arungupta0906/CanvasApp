@@ -17,15 +17,15 @@ namespace CanvasApp.Commands
         public ICanvas ExecuteCommand(string[] args)
         {
             if (args.Length < 3)
-                throw new ArgumentException($"This command expects 3 arguments but only received {args.Length}");
+                throw new ArgumentException($"{Constants.Command_Expect_Three_Arguments} {args.Length}");
 
             if (!uint.TryParse(args[0], out uint x)
                      || !uint.TryParse(args[1], out uint y)
                      || !char.TryParse(args[2], out char colour))
-                throw new ArgumentException("There are some invalid arguments. The 2 first arguments should be positive integer and the last one should be an alphanumerical character");
+                throw new ArgumentException($"{Constants.Command_Expect_Two_Positive_One_Alphanumeric_Arguments}");
 
             if (_canvas == null)
-                throw new ArgumentException("Canvas does not exists. Please create one then try again.");
+                throw new ArgumentException($"{Constants.Command_Canvas_Not_Exists}");
 
             var adjustedTarget = new Point(x, y);
 
